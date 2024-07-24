@@ -21,6 +21,10 @@ html, body {
     flex-direction: column;
 }
 
+.heading-and-clearall {
+    display: flex;
+}
+
 .display-result-section {
     display: none;
 }
