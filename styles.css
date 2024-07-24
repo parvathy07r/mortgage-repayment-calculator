@@ -76,3 +76,7 @@ button > img {
 .display-result-section {
     display: none;
 }
+
+input[type = "radio"] {
+    accent-color: yellow;
+}
