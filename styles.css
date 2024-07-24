@@ -16,6 +16,11 @@ html, body {
     height: 100vh;
 }
 
+.input-section {
+    display: flex;
+    flex-direction: column;
+}
+
 .display-result-section {
     display: none;
 }
