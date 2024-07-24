@@ -37,6 +37,11 @@ form {
     column-gap: 8px;
 }
 
+.mortgage-type {
+    display: flex;
+    flex-direction: column;
+}
+
 .display-result-section {
     display: none;
 }
