@@ -48,6 +48,22 @@ form {
     padding: 4px;
 }
 
+button {
+    background-color: hsl(61, 70%, 52%);
+    border: none;
+    border-radius: 10px;
+    padding: 4px 16px 6px 16px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+button > img {
+    width: 16px;
+    position: relative;
+    top: 3px;
+    right: 3px;
+}
+
 .display-result-section {
     display: none;
 }
