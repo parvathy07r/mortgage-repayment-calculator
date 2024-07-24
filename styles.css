@@ -18,12 +18,20 @@ html, body {
 
 .heading-and-clearall {
     display: flex;
+    justify-content: space-between;
 }
 
 .input-section {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+}
+
+input {
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid black;
+    padding: 4px;
 }
 
 form {
@@ -46,6 +54,7 @@ form {
 .repayment, .interest-only {
     border: 1px solid black;
     padding: 4px;
+    border-radius: 4px;
 }
 
 button {
