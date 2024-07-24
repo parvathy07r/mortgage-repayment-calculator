@@ -32,14 +32,15 @@ form {
     row-gap: 16px;
 }
 
+.mortgage-amount, .mortgage-term, .interest-rate, .mortgage-type {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+}
+
 .mortgage-term-and-interest-rate {
     display: flex;
     column-gap: 8px;
-}
-
-.mortgage-type {
-    display: flex;
-    flex-direction: column;
 }
 
 .display-result-section {
