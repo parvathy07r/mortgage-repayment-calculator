@@ -16,6 +16,10 @@ html, body {
     height: 100vh;
 }
 
+.heading-and-clearall {
+    display: flex;
+}
+
 .input-section {
     display: flex;
     flex-direction: column;
@@ -28,8 +32,9 @@ form {
     row-gap: 16px;
 }
 
-.heading-and-clearall {
+.mortgage-term-and-interest-rate {
     display: flex;
+    column-gap: 8px;
 }
 
 .display-result-section {
