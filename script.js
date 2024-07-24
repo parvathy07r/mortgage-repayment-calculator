@@ -23,25 +23,27 @@ function validateInputFields(mortgageAmount,mortgageTerm, interestRate, repaymen
     let isValid = true;
 
     if(!mortgageAmount) {
-        mortgageAmountError.innerHTML = "This field is required";
-        isValid = false;
+        isValid = setBlankError(mortgageAmountError, "This field is required");
     }
 
     if(!mortgageTerm) {
-        mortgageTermError.innerHTML = "This field is required";
-        isValid = false;
+        isValid = setBlankError(mortgageTermError, "This field is required");
     }
 
     if(!interestRate) {
-        interestRateError.innerHTML = "This field is required";
-        isValid = false;
+        isValid = setBlankError(interestRateError, "This field is required");
     }
 
     if(!repaymentRadioButton || ! interestOnlyRadioButton) {
-        mortgageTypeError.innerHTML = "This field is required";
-        isValid = false;
+        isValid = setBlankError(mortgageTypeError, "This field is required");
     } 
 
     return isValid;
 
+}
+
+function setBlankError(errorElement, errorMessage) {
+    errorElement.innerHTML = errorMessage;
+    errorElement.style.color = "red";
+    return false;
 }
