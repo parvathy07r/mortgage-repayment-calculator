@@ -11,3 +11,7 @@ html, body {
 .wrapper {
     display: flex;
 }
+
+.display-result-section {
+    display: none;
+}
