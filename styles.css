@@ -32,7 +32,7 @@ form {
     row-gap: 16px;
 }
 
-.mortgage-amount, .mortgage-term, .interest-rate, .mortgage-type {
+.mortgage-amount, .mortgage-term, .interest-rate, .mortgage-type, .radio-buttons {
     display: flex;
     flex-direction: column;
     row-gap: 6px;
@@ -41,6 +41,11 @@ form {
 .mortgage-term-and-interest-rate {
     display: flex;
     column-gap: 8px;
+}
+
+.repayment, .interest-only {
+    border: 1px solid black;
+    padding: 4px;
 }
 
 .display-result-section {
