@@ -32,6 +32,7 @@
         <div class="mortgage-amount">
           <div class="label">Mortgage Amount</div>
           <input type="text" name="amount">
+          <div class="amount-error"></div>
         </div>
 
         <div class="mortgage-term-and-interest-rate">
@@ -39,11 +40,13 @@
           <div class="mortgage-term">
             <div class="label">Mortgage Term</div>
             <input type="text" name="term">
+            <div class="term-error"></div>
           </div>
 
           <div class="interest-rate">
             <div class="label">Interest Rate</div>
             <input type="text" name="rate">
+            <div class="rate-error"></div>
           </div>
 
         </div>
@@ -56,9 +59,10 @@
               <input type="radio" name="question" id="repayment">Repayment
             </div>
             <div class="interest-only">
-              <input type="radio" name="question" id="intereset">Interest Only
+              <input type="radio" name="question" id="interest">Interest Only
             </div>
           </div>
+          <div class="type-error"></div>
 
         </div>
 
