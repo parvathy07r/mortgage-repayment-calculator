@@ -7,3 +7,7 @@ html, body {
 *, *::after, *::before {
     box-sizing: inherit;
 }
+
+.wrapper {
+    display: flex;
+}
