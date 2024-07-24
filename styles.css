@@ -19,6 +19,13 @@ html, body {
 .input-section {
     display: flex;
     flex-direction: column;
+    row-gap: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
 }
 
 .heading-and-clearall {
