@@ -68,7 +68,7 @@ form {
     border-radius: 4px;
 }
 
-button {
+.submit-button button {
     background-color: hsl(61, 70%, 52%);
     border: none;
     border-radius: 10px;
@@ -84,7 +84,7 @@ button > img {
     right: 3px;
 }
 
-input[type = "radio"] {
+input[type = "radio"] {  
     accent-color: yellow;
 }
 
@@ -164,4 +164,17 @@ input[type = "radio"] {
 .heading {
     font-size: 20px;
     font-weight: bold;
+}
+
+.mortgage-calculator {
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.clear-button {
+    border: none;
+    background-color: white;
+    border-bottom: 1px solid;
+    color: grey;
 }
