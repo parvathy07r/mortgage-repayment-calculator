@@ -19,6 +19,12 @@ const repaymentResultsComputedStyle = window.getComputedStyle(repaymentResults);
 const interestResults = document.querySelector(".display-result-interest");
 const interestResultsComputedStyle = window.getComputedStyle(interestResults);
 
+const clearButton = document.querySelector(".clear-button");
+
+
+clearButton.addEventListener("click", function() {
+    location.reload();
+});
 
 formData.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -29,7 +35,6 @@ formData.addEventListener("submit", function(event) {
     let interestRate = form["rate"].value;
     const repaymentRadioButton = form.querySelector("#repayment").checked;
     const interestOnlyRadioButton = form.querySelector("#interest").checked;
-
 
 
     const isValid = validateInputFields(mortgageAmount, mortgageTerm, interestRate, repaymentRadioButton, interestOnlyRadioButton);
@@ -79,6 +84,7 @@ formData.addEventListener("submit", function(event) {
         }
 
     }
+
     
 });
 
@@ -111,3 +117,5 @@ function setBlankError(errorElement, errorMessage) {
     errorElement.style.color = "red";
     return false;
 }
+
+
