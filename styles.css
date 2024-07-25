@@ -97,11 +97,12 @@ input[type = "radio"] {
     justify-content: center;
     align-items: center;
     padding: 24px;
+    color: white;
 
 }
 
-.result-section-default > p {
-    width: 364px;
+.result-section-default > .description {
+    text-align: center;
 }
 
 .display-result-section {
@@ -155,6 +156,11 @@ input[type = "radio"] {
 }
 
 .total-repayment-result, .total-interest-result {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.heading {
     font-size: 20px;
     font-weight: bold;
 }
