@@ -178,3 +178,17 @@ input[type = "radio"] {
     border-bottom: 1px solid;
     color: grey;
 }
+
+.amount-input-field-style, .term-input-field-style, .rate-input-field-style{
+    display: flex;
+    border: 1px solid hsl(200, 26%, 54%);
+}
+
+.icon {
+    padding: 8px;
+    background-color: hsl(202, 86%, 94%)
+}
+
+input {
+    border: none;
+}

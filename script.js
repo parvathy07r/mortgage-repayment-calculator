@@ -62,8 +62,8 @@ formData.addEventListener("submit", function(event) {
             M = M.toFixed(2);
             let totalRepaymentAmount = M * totalMonths;
             totalRepaymentAmount = totalRepaymentAmount.toFixed(2);
-            monthlyRepayment.innerHTML = '£ ' + M;
-            totalRepayment.innerHTML = '£ ' + totalRepaymentAmount;
+            monthlyRepayment.innerHTML = '£' + M;
+            totalRepayment.innerHTML = '£' + totalRepaymentAmount;
 
         }
 
@@ -78,8 +78,8 @@ formData.addEventListener("submit", function(event) {
             monthlyInterest = monthlyInterest.toFixed(2);
             let totalInterest = monthlyInterest * totalMonths;
             totalInterest = totalInterest.toFixed(2);
-            monthlyInterestAmount.innerHTML = '£ ' + monthlyInterest;
-            totalInterestAmount.innerHTML = '£ ' + totalInterest;
+            monthlyInterestAmount.innerHTML = '£' + monthlyInterest;
+            totalInterestAmount.innerHTML = '£' + totalInterest;
 
         }
 
