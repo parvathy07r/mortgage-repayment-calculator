@@ -3,12 +3,22 @@ const mortgageAmountError = document.querySelector(".amount-error");
 const mortgageTermError = document.querySelector(".term-error");
 const interestRateError = document.querySelector(".rate-error");
 const mortgageTypeError = document.querySelector(".type-error");
+
 const monthlyRepayment = document.querySelector(".monthly-repayment-result");
 const totalRepayment = document.querySelector(".total-repayment-result");
+
+const monthlyInterestAmount = document.querySelector(".monthly-interest-result");
+const totalInterestAmount = document.querySelector(".total-interest-result");
+
 const secondPage = document.querySelector(".display-result-section");
 const secondPageComputedStyle = window.getComputedStyle(secondPage);
+
 const firstPage = document.querySelector(".result-section-default");
-const totalPayment = document.querySelector(".total-repayment-result");
+const repaymentResults = document.querySelector(".display-result-repayment");
+const repaymentResultsComputedStyle = window.getComputedStyle(repaymentResults);
+const interestResults = document.querySelector(".display-result-interest");
+const interestResultsComputedStyle = window.getComputedStyle(interestResults);
+
 
 formData.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -26,30 +36,46 @@ formData.addEventListener("submit", function(event) {
 
     if(isValid) {
 
+        if(secondPageComputedStyle.display === 'none') {
+            secondPage.style.display = "inline-flex";
+            firstPage.style.display = "none";
+        }
+
+        let monthlyInterestRate = interestRate / 100 / 12;
+        let totalMonths = mortgageTerm * 12;
+
         if(repaymentRadioButton) {
 
-            if(secondPageComputedStyle.display === 'none') {
-                secondPage.style.display = "inline-flex";
-                firstPage.style.display = "none";
+            if(repaymentResultsComputedStyle.display === 'none') {
+                repaymentResults.style.display = "inline-flex";
+                interestResults.style.display = "none";
             }
-            
+
             interestRate = interestRate/100/12;
             mortgageTerm = mortgageTerm * 12;
-            let M = mortgageAmount * interestRate * Math.pow(1 + interestRate, mortgageTerm)/(Math.pow(1 + interestRate, mortgageTerm) - 1);
+            let M = mortgageAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalMonths) / (Math.pow(1 + monthlyInterestRate, totalMonths) - 1);
             M = M.toFixed(2);
-            let t = M * mortgageTerm;
-            t = t.toFixed(2);
-            monthlyRepayment.innerHTML = '£' + M;
-            totalPayment.innerHTML = '£' + t;
+            let totalRepaymentAmount = M * totalMonths;
+            totalRepaymentAmount = totalRepaymentAmount.toFixed(2);
+            monthlyRepayment.innerHTML = '£ ' + M;
+            totalRepayment.innerHTML = '£ ' + totalRepaymentAmount;
+
         }
 
         if(interestOnlyRadioButton) {
-            let M = mortgageAmount * (interestRate /  (100 *12));
-            M = M.toFixed(2);
-            let t = M * mortgageTerm;
-            t = t.toFixed(2);
-            monthlyRepayment.innerHTML = '£' + M;
-            totalPayment.innerHTML = '£' + t;
+
+            if(interestResultsComputedStyle.display === 'none') {
+                interestResults.style.display = "inline-flex";
+                repaymentResults.style.display = "none";
+            }
+
+            let monthlyInterest = mortgageAmount * monthlyInterestRate;
+            monthlyInterest = monthlyInterest.toFixed(2);
+            let totalInterest = monthlyInterest * totalMonths;
+            totalInterest = totalInterest.toFixed(2);
+            monthlyInterestAmount.innerHTML = '£ ' + monthlyInterest;
+            totalInterestAmount.innerHTML = '£ ' + totalInterest;
+
         }
 
     }

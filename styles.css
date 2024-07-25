@@ -123,3 +123,9 @@ input[type = "radio"] {
     border-top: 2px solid yellow;
     padding: 16px;
 }
+
+.display-result-interest, .display-result-repayment {
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
