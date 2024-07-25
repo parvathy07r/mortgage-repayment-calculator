@@ -96,12 +96,24 @@ function validateInputFields(mortgageAmount,mortgageTerm, interestRate, repaymen
         isValid = setBlankError(mortgageAmountError, "This field is required");
     }
 
+    if(isNaN(mortgageAmount)) {
+        isValid = setBlankError(mortgageAmountError, "Enter a valid number")
+    }
+
     if(!mortgageTerm) {
         isValid = setBlankError(mortgageTermError, "This field is required");
     }
 
+    if(isNaN(mortgageTerm)) {
+        isValid = setBlankError(mortgageTermError, "Enter a valid number")
+    }
+
     if(!interestRate) {
         isValid = setBlankError(interestRateError, "This field is required");
+    }
+
+    if(isNaN(interestRate)) {
+        isValid = setBlankError(interestRateError, "Enter a valid number")
     }
 
     if(!repaymentRadioButton && ! interestOnlyRadioButton) {
