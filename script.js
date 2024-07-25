@@ -25,18 +25,33 @@ formData.addEventListener("submit", function(event) {
     const isValid = validateInputFields(mortgageAmount, mortgageTerm, interestRate, repaymentRadioButton, interestOnlyRadioButton);
 
     if(isValid) {
+
         if(repaymentRadioButton) {
+
             if(secondPageComputedStyle.display === 'none') {
                 secondPage.style.display = "inline-flex";
                 firstPage.style.display = "none";
             }
+            
             interestRate = interestRate/100/12;
             mortgageTerm = mortgageTerm * 12;
             let M = mortgageAmount * interestRate * Math.pow(1 + interestRate, mortgageTerm)/(Math.pow(1 + interestRate, mortgageTerm) - 1);
+            M = M.toFixed(2);
             let t = M * mortgageTerm;
+            t = t.toFixed(2);
             monthlyRepayment.innerHTML = '£' + M;
             totalPayment.innerHTML = '£' + t;
         }
+
+        if(interestOnlyRadioButton) {
+            let M = mortgageAmount * (interestRate /  (100 *12));
+            M = M.toFixed(2);
+            let t = M * mortgageTerm;
+            t = t.toFixed(2);
+            monthlyRepayment.innerHTML = '£' + M;
+            totalPayment.innerHTML = '£' + t;
+        }
+
     }
     
 });
