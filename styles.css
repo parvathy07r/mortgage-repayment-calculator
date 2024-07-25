@@ -23,6 +23,7 @@ html, body {
     margin: 96px;
     box-shadow: 1px 1px 1px 1px;
     border-radius: 10px;
+    width: 800px;
 }
 
 .heading-and-clearall {
