@@ -136,6 +136,7 @@ function setBlankError(errorElement, errorMessage, inputElement, icon) {
     errorElement.style.color = "red";
     inputElement.style.border = "1px solid red";
     icon.style.backgroundColor = "red";
+    icon.style.color = "white";
     return false;
 }
 
