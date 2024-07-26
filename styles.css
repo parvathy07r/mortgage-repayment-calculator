@@ -69,6 +69,8 @@ form {
     border: 1px solid black;
     padding: 4px;
     border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .submit-button button {
@@ -189,7 +191,10 @@ input[type = "radio"] {
 
 .icon {
     padding: 8px;
-    background-color: hsl(202, 86%, 94%)
+    background-color: hsl(202, 86%, 94%);
+    font-size: 12px;
+    font-weight: bold;
+    color: hsl(200, 26%, 54%);
 }
 
 input {
@@ -200,3 +205,4 @@ input {
     font-size: 12px;
     color: grey;
 }
+

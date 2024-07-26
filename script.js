@@ -28,7 +28,6 @@ const iconAmount = document.querySelector(".icon_amount");
 const iconTerm = document.querySelector(".icon_term");
 const iconRate = document.querySelector(".icon_rate");
 
-
 clearButton.addEventListener("click", function() {
     location.reload();
 });
