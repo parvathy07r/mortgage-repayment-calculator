@@ -134,6 +134,7 @@ function validateInputFields(mortgageAmount,mortgageTerm, interestRate, repaymen
 function setBlankError(errorElement, errorMessage, inputElement, icon) {
     errorElement.innerHTML = errorMessage;
     errorElement.style.color = "red";
+    errorElement.style.fontSize = "12px";
     inputElement.style.border = "1px solid red";
     icon.style.backgroundColor = "red";
     icon.style.color = "white";
