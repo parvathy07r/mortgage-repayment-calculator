@@ -62,14 +62,7 @@ formData.addEventListener("submit", function(event) {
                 interestResults.style.display = "none";
             }
 
-            interestRate = interestRate/100/12;
-            mortgageTerm = mortgageTerm * 12;
-            let M = mortgageAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalMonths) / (Math.pow(1 + monthlyInterestRate, totalMonths) - 1);
-            M = M.toFixed(2);
-            let totalRepaymentAmount = M * totalMonths;
-            totalRepaymentAmount = totalRepaymentAmount.toFixed(2);
-            monthlyRepayment.innerHTML = '£' + M;
-            totalRepayment.innerHTML = '£' + totalRepaymentAmount;
+            calculateRepaymentAmount(mortgageAmount, monthlyInterestRate, monthlyInterestRate, totalMonths);
 
         }
 
@@ -80,12 +73,8 @@ formData.addEventListener("submit", function(event) {
                 repaymentResults.style.display = "none";
             }
 
-            let monthlyInterest = mortgageAmount * monthlyInterestRate;
-            monthlyInterest = monthlyInterest.toFixed(2);
-            let totalInterest = monthlyInterest * totalMonths;
-            totalInterest = totalInterest.toFixed(2);
-            monthlyInterestAmount.innerHTML = '£' + monthlyInterest;
-            totalInterestAmount.innerHTML = '£' + totalInterest;
+            calculateInterest(mortgageAmount, monthlyInterestRate, totalMonths);
+
 
         }
 
@@ -140,4 +129,25 @@ function setBlankError(errorElement, errorMessage, inputElement, icon) {
     return false;
 }
 
+function calculateRepaymentAmount(mortgageAmount, monthlyInterestRate, monthlyInterestRate, totalMonths) {
+
+    let M = mortgageAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalMonths) / (Math.pow(1 + monthlyInterestRate, totalMonths) - 1);
+    M = M.toFixed(2);
+    let totalRepaymentAmount = M * totalMonths;
+    totalRepaymentAmount = totalRepaymentAmount.toFixed(2);
+    monthlyRepayment.innerHTML = '£' + M;
+    totalRepayment.innerHTML = '£' + totalRepaymentAmount;
+
+}
+
+function calculateInterest(mortgageAmount, monthlyInterestRate, totalMonths) {
+
+    let monthlyInterest = mortgageAmount * monthlyInterestRate;
+    monthlyInterest = monthlyInterest.toFixed(2);
+    let totalInterest = monthlyInterest * totalMonths;
+    totalInterest = totalInterest.toFixed(2);
+    monthlyInterestAmount.innerHTML = '£' + monthlyInterest;
+    totalInterestAmount.innerHTML = '£' + totalInterest;
+
+}
 

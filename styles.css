@@ -71,6 +71,7 @@ form {
     border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
+    accent-color: yellow;
 }
 
 .submit-button button {
@@ -87,10 +88,6 @@ button > img {
     position: relative;
     top: 3px;
     right: 3px;
-}
-
-input[type = "radio"] {  
-    accent-color: yellow;
 }
 
 .result-section-default {
