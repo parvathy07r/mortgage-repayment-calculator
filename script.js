@@ -21,6 +21,13 @@ const interestResultsComputedStyle = window.getComputedStyle(interestResults);
 
 const clearButton = document.querySelector(".clear-button");
 
+const amountInputField = document.querySelector(".amount-input-field-style");
+const termInputField = document.querySelector(".term-input-field-style");
+const rateInputField = document.querySelector(".rate-input-field-style");
+const iconAmount = document.querySelector(".icon_amount");
+const iconTerm = document.querySelector(".icon_term");
+const iconRate = document.querySelector(".icon_rate");
+
 
 clearButton.addEventListener("click", function() {
     location.reload();
@@ -93,27 +100,27 @@ function validateInputFields(mortgageAmount,mortgageTerm, interestRate, repaymen
     let isValid = true;
 
     if(!mortgageAmount) {
-        isValid = setBlankError(mortgageAmountError, "This field is required");
+        isValid = setBlankError(mortgageAmountError, "This field is required", amountInputField, iconAmount);
     }
 
     if(isNaN(mortgageAmount)) {
-        isValid = setBlankError(mortgageAmountError, "Enter a valid number")
+        isValid = setBlankError(mortgageAmountError, "Enter a valid number", amountInputField, iconAmount);
     }
 
     if(!mortgageTerm) {
-        isValid = setBlankError(mortgageTermError, "This field is required");
+        isValid = setBlankError(mortgageTermError, "This field is required", termInputField, iconTerm);
     }
 
     if(isNaN(mortgageTerm)) {
-        isValid = setBlankError(mortgageTermError, "Enter a valid number")
+        isValid = setBlankError(mortgageTermError, "Enter a valid number", termInputField, iconTerm);
     }
 
     if(!interestRate) {
-        isValid = setBlankError(interestRateError, "This field is required");
+        isValid = setBlankError(interestRateError, "This field is required", rateInputField, iconRate);
     }
 
     if(isNaN(interestRate)) {
-        isValid = setBlankError(interestRateError, "Enter a valid number")
+        isValid = setBlankError(interestRateError, "Enter a valid number", rateInputField, iconRate);
     }
 
     if(!repaymentRadioButton && ! interestOnlyRadioButton) {
@@ -124,9 +131,11 @@ function validateInputFields(mortgageAmount,mortgageTerm, interestRate, repaymen
 
 }
 
-function setBlankError(errorElement, errorMessage) {
+function setBlankError(errorElement, errorMessage, inputElement, icon) {
     errorElement.innerHTML = errorMessage;
     errorElement.style.color = "red";
+    inputElement.style.border = "1px solid red";
+    icon.style.backgroundColor = "red";
     return false;
 }
 
